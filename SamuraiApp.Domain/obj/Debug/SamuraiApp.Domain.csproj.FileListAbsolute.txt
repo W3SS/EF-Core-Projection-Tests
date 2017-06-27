@@ -1,0 +1,5 @@
+D:\gitrepos\EF Core Projection Tests\SamuraiApp.Domain\bin\Debug\SamuraiApp.Domain.dll
+D:\gitrepos\EF Core Projection Tests\SamuraiApp.Domain\bin\Debug\SamuraiApp.Domain.pdb
+D:\gitrepos\EF Core Projection Tests\SamuraiApp.Domain\obj\Debug\SamuraiApp.Domain.csproj.CoreCompileInputs.cache
+D:\gitrepos\EF Core Projection Tests\SamuraiApp.Domain\obj\Debug\SamuraiApp.Domain.dll
+D:\gitrepos\EF Core Projection Tests\SamuraiApp.Domain\obj\Debug\SamuraiApp.Domain.pdb

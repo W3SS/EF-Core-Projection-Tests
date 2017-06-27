@@ -1,22 +1,17 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Data.NetFx47.Nightly;
+﻿using Data.NetFx47.Nightly;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SamuraiApp.Domain;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
-
-
 
 namespace Tests
 {
     [TestClass]
     public class UnitTest1
     {
-
-   
         private void Seed(SamuraiContext context)
         {
-
             if (context.Samurais.Any())
             {
                 return;
@@ -28,7 +23,6 @@ namespace Tests
                                {
                                  new Quote {Text = "I've come to save you"}
                                }
-
             };
             var samurai2 = new Samurai
             {
@@ -44,13 +38,11 @@ namespace Tests
             context.Samurais.AddRange(samurai, samurai2, samurai3);
 
             context.SaveChanges();
-
         }
 
         [TestMethod]
         public void SeedWithQueryReturnsCorrectNumberOfSamuraisQuotesAndIdentities()
         {
-
             using (var context = new SamuraiContext())
             {
                 context.Database.EnsureDeleted();
@@ -63,14 +55,8 @@ namespace Tests
                 Assert.AreEqual(3, sCount);
                 Assert.AreEqual(3, qCount);
                 Assert.AreEqual(1, iCount);
-             }
-
-
+            }
         }
-
-
-
-        
 
         [TestMethod]
         public void EagerLoadViaProjectionRetrievesRelatedData()
@@ -97,6 +83,7 @@ namespace Tests
                 Assert.AreEqual(3, context.ChangeTracker.Entries<Quote>().Count());
             }
         }
+
         [TestMethod]
         public void EagerLoadViaProjectionTracksRelatedDataIfModified()
         {
@@ -111,10 +98,5 @@ namespace Tests
                 Assert.AreEqual(2, context.ChangeTracker.Entries().Count(e => e.State == EntityState.Modified));
             }
         }
-     
-
-     
-
-
     }
 }
